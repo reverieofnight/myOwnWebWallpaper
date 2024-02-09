@@ -2,14 +2,32 @@
 	"file" : "index.html",
 	"general" : 
 	{
+		"localization" : 
+		{
+			"en-us" : 
+			{
+				"ui_showbackground" : "show Background",
+				"ui_showclock" : "show Clock",
+				"ui_slidefolder" : "slide Folder",
+				"ui_timeout" : "timeout"
+			},
+			"zh-chs" : 
+			{
+				"ui_showbackground" : "显示背景",
+				"ui_showclock" : "显示时钟",
+				"ui_slidefolder" : "图片文件夹",
+				"ui_timeout" : "持续时间"
+			}
+		},
 		"properties" : 
 		{
 			"imagedirectory" : 
 			{
-				"index" : 0,
+				"condition" : "showbackground.value == true",
+				"index" : 1,
 				"mode" : "fetchall",
-				"order" : 100,
-				"text" : "图片文件夹",
+				"order" : 101,
+				"text" : "ui_slidefolder",
 				"type" : "directory",
 				"value" : ""
 			},
@@ -20,14 +38,31 @@
 				"type" : "color",
 				"value" : "1 1 1"
 			},
+			"showbackground" : 
+			{
+				"index" : 0,
+				"order" : 100,
+				"text" : "ui_showbackground",
+				"type" : "bool",
+				"value" : false
+			},
+			"showclock" : 
+			{
+				"index" : 3,
+				"order" : 103,
+				"text" : "ui_showclock",
+				"type" : "bool",
+				"value" : false
+			},
 			"timeout" : 
 			{
+				"condition" : "showbackground.value ==  true",
 				"fraction" : false,
-				"index" : 1,
+				"index" : 2,
 				"max" : 300,
 				"min" : 1,
-				"order" : 101,
-				"text" : "超时时间",
+				"order" : 102,
+				"text" : "ui_timeout",
 				"type" : "slider",
 				"value" : 15
 			}

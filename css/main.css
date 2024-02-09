@@ -1,0 +1,46 @@
+
+@font-face {
+    font-family: "digital";
+    src: url("../assets/fonts/digital.ttf");
+  }
+body{
+    margin:0;
+    padding:0;
+}
+#view-container{
+    display: block;
+    width: 100vw;
+    height:100vh;
+    background-color: black;
+    overflow: hidden;
+    
+}
+#background{
+    width:100vw;
+    height:100vh;
+    display:block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.beforeImage{
+    position: absolute;
+    width:100%;
+    height:100%;
+    display:block;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#clock{
+    position: absolute;
+    transform:translate(-50%,-50%);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 0 20px rgba(255,255,255,0.7);
+    
+}
+#clock .time{
+    display: flex;
+}
