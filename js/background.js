@@ -1,4 +1,4 @@
-var backgroundModule = (function () {
+const backgroundModule = (function () {
     let timeout = 15000; //切换图片时间
     let background = '';//背景图片元素
     let IntervalTimer = '';
@@ -8,7 +8,8 @@ var backgroundModule = (function () {
         window.wallpaperPropertyListener = {
             applyUserProperties:function(properties){
                 if(properties.imagedirectory){
-                    console.log('图片路径',properties.imagedirectory);
+                    console.log('图片路径改变',properties.imagedirectory);
+                    window.wallpaperRequestRandomFileForProperty('imagedirectory',switchBackgroundImage)
                 };
                 if(properties.timeout){
                     timeout = properties.timeout.value * 1000;
