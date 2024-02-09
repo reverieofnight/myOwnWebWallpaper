@@ -1,0 +1,40 @@
+{
+	"file" : "index.html",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"imagedirectory" : 
+			{
+				"index" : 0,
+				"mode" : "fetchall",
+				"order" : 100,
+				"text" : "图片文件夹",
+				"type" : "directory",
+				"value" : ""
+			},
+			"schemecolor" : 
+			{
+				"order" : 0,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "1 1 1"
+			},
+			"timeout" : 
+			{
+				"fraction" : false,
+				"index" : 1,
+				"max" : 300,
+				"min" : 1,
+				"order" : 101,
+				"text" : "超时时间",
+				"type" : "slider",
+				"value" : 15
+			}
+		}
+	},
+	"preview" : "preview.jpg",
+	"title" : "myOwnWebWallpaper",
+	"type" : "web",
+	"version" : 0
+}
