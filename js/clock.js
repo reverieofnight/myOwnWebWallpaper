@@ -11,18 +11,18 @@ const clockModule = (function () {
     let dotActive = false;
     let timeFontSize = 300;
     let dateLayer = '';
-    let dateFontSize = 100;
+    let dateFontSize = 110;
     let yearLayer = '';
-    let yearFontSize = 100;
+    let yearFontSize = 110;
     let timer = '';
     const zhWeekdayList = [
+        '星期日',
         '星期一',
         '星期二',
         '星期三',
         '星期四',
         '星期五',
         '星期六',
-        '星期日',
     ];
     const zhMonthList = [
         '一月',
@@ -39,13 +39,14 @@ const clockModule = (function () {
         '十二月',
     ]
     const enWeekdayList = [
+        'Sunday',
         'Monday',
         'Tuesday',
         'Wednesday',
         'Thursday',
         'Friday',
         'Saturday',
-        'Sunday'
+        
     ];
     const enMonthList = [
         'January',
@@ -78,6 +79,7 @@ const clockModule = (function () {
         clock.style.top = top + '%';
         clock.style.color = color;
         clock.style.fontFamily = fontFamily;
+        clock.style.transform = 'translate(-50%,-' + (timeFontSize / 2) + 'px)';   
         viewer.appendChild(clock);
         timeLayer = document.createElement('div');
         timeLayer.classList.add('time');
@@ -88,6 +90,11 @@ const clockModule = (function () {
             num.classList.add('number' + index);
             if(index === 3 || index === 6){
                 num.classList.add('dot');
+                num.style.fontSize = timeFontSize * 0.8 + 'px';
+                num.style.marginTop = '-'
+            } else {
+                num.style.width = timeFontSize / 2 + 'px';
+                num.style.textAlign = 'end';
             }
             timeLayer.appendChild(num);
         }
@@ -99,18 +106,25 @@ const clockModule = (function () {
         yearLayer.classList.add('year');
         yearLayer.style.fontSize = yearFontSize + 'px';
         clock.appendChild(yearLayer);
-
+        refreshTime();
     }
     function refreshTime(){
-        time  = dayjs().format('HH:mm:ss');
-        dotActive = !dotActive;
+        let newtime = dayjs().format('HH:mm:ss');
+        if(newtime !== time){
+            dotActive = !dotActive;
+        }
+        time = newtime;
         for(let i = 1;i <= 8;i++){
             timeChild['number' + i].innerText = time.charAt(i - 1);
             if(i === 3 || i === 6){
-                
+                if(dotActive){
+                    timeChild['number' + i].classList.add('active');
+                } else {
+                    timeChild['number' + i].classList.remove('active');
+                }
             }
         }
-        let weekday = enWeekdayList[dayjs().day() - 1];
+        let weekday = enWeekdayList[dayjs().day()];
         let month = enMonthList[dayjs().month()];
         let date = dayjs().date();
         dateLayer.innerText = weekday + ',' + month + ',' + date;
