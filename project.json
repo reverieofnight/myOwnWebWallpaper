@@ -1,4 +1,6 @@
 {
+	"contentrating" : "Everyone",
+	"description" : "简单的图片轮播加上时钟效果,对系统资源的消耗很低。",
 	"file" : "index.html",
 	"general" : 
 	{
@@ -69,7 +71,10 @@
 		}
 	},
 	"preview" : "preview.jpg",
-	"title" : "myOwnWebWallpaper",
+	"ratingsex" : "none",
+	"ratingviolence" : "none",
+	"tags" : [ "Nature" ],
+	"title" : "simpleSlideWallpaper",
 	"type" : "web",
 	"version" : 0
 }
