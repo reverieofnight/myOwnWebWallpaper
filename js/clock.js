@@ -79,7 +79,7 @@ const clockModule = (function () {
         clock.style.top = top + '%';
         clock.style.color = color;
         clock.style.fontFamily = fontFamily;
-        clock.style.transform = 'translate(-50%,-' + (timeFontSize / 2) + 'px)';   
+        clock.style.transform = 'translate3D(-50%,-' + (timeFontSize / 2) + 'px,0)';   
         viewer.appendChild(clock);
         timeLayer = document.createElement('div');
         timeLayer.classList.add('time');

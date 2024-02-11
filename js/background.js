@@ -43,15 +43,18 @@ const backgroundModule = (function () {
         let beforeImage = document.createElement('div');
         beforeImage.classList.add('beforeImage');
         beforeImage.style.backgroundImage = url;
-        beforeImage.style.transition = "opacity 2s cubic-bezier(0.25,0.1,0.25,1)"
+        beforeImage.style.transition = "all 2s cubic-bezier(0.25,0.1,0.25,1)"
         beforeImage.style.opacity = '0';
+        // beforeImage.style.transform = 'translate(-100%,0)';
         background.append(beforeImage);
 
         setTimeout(() => {
             beforeImage.style.opacity = '1';
+            // beforeImage.style.transform = 'translate(0,0)';
+
             setTimeout(() => {
-                background.removeChild(beforeImage);
                 background.style.backgroundImage = url;
+                background.removeChild(beforeImage);
             }, 2000);
         }, 100);
     }

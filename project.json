@@ -77,6 +77,7 @@
 	"title" : "simpleSlideWallpaper",
 	"type" : "web",
 	"version" : 1,
+	"visibility" : "public",
 	"workshopid" : "3157935536",
 	"workshopurl" : "steam://url/CommunityFilePage/3157935536"
 }
