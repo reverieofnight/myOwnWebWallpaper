@@ -86,8 +86,8 @@
 	"ratingviolence" : "none",
 	"tags" : [ "Nature" ],
 	"title" : "simpleSlideWallpaper",
-	"type" : "web",
-	"version" : 3,
+	"type" : "Web",
+	"version" : 4,
 	"visibility" : "public",
 	"workshopid" : "3157935536",
 	"workshopurl" : "steam://url/CommunityFilePage/3157935536"
