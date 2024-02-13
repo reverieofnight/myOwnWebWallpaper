@@ -136,13 +136,16 @@ const clockModule = (function () {
         let newMonth = enMonthList[latestTimeArr[1] - 1];
         let newDate = latestTimeArr[2];
         let newWeekday = enWeekdayList[latestTimeArr[3]];
-        if(newMonth !== month || newDate !== date || newWeekday !== weekday){
+        console.log('month',month);
+        console.log('date',date);
+        console.log('weekday',weekday);
+        if(dateLayer.innerText === '' || newMonth !== month || newDate !== date || newWeekday !== weekday){
             month = newMonth;
             date = newDate;
             weekday = newWeekday;
             dateLayer.innerText = weekday + ',' + month + ' ' + date;
         }
-        if(newYear !== year){
+        if(yearLayer.innerText === '' || newYear !== year){
             year = newYear;
             yearLayer.innerText = year;
         }
