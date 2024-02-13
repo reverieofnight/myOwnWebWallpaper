@@ -1,9 +1,10 @@
 const backgroundModule = (function () {
-    let timeout = 15000; //切换图片时间
+    let timeout = ''; //切换图片时间
     let background = '';//背景图片元素
     let IntervalTimer = '';
     let exist = false;
     function init() {
+        timeout = window.userProperties.timeout * 1000;
         //添加背景层
         initBackgroundContainer();
         //图片路径改变回调函数
@@ -13,11 +14,13 @@ const backgroundModule = (function () {
         }
         //持续时间改变回调函数
         propertiesRecalls['timeout'] = function(property){
+            console.log('持续时间',property);
             timeout = property.value * 1000;
             resetTimeInterval();
         }
         //添加初始背景图片
-        window.wallpaperRequestRandomFileForProperty('imagedirectory',switchBackgroundImage)
+        window.wallpaperRequestRandomFileForProperty('imagedirectory',switchBackgroundImage);
+        resetTimeInterval();
         exist = true;
     }
     //初始化背景图层

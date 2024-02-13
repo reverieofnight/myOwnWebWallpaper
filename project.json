@@ -11,14 +11,17 @@
 				"ui_showbackground" : "show Background",
 				"ui_showclock" : "show Clock",
 				"ui_slidefolder" : "slide Folder",
-				"ui_timeout" : "timeout"
+				"ui_timeout" : "timeout",
+				"ui_showVisualizer":"show Visualizer"
 			},
 			"zh-chs" : 
 			{
 				"ui_showbackground" : "显示背景",
 				"ui_showclock" : "显示时钟",
 				"ui_slidefolder" : "图片文件夹",
-				"ui_timeout" : "持续时间"
+				"ui_timeout" : "持续时间",
+				"ui_showVisualizer":"音频可视化"
+
 			}
 		},
 		"properties" : 
@@ -56,6 +59,14 @@
 				"type" : "bool",
 				"value" : false
 			},
+			"showvisualizer" : 
+			{
+				"index" : 4,
+				"order" : 104,
+				"text" : "ui_showVisualizer",
+				"type" : "bool",
+				"value" : false
+			},
 			"timeout" : 
 			{
 				"condition" : "showbackground.value ==  true",
@@ -75,7 +86,7 @@
 	"ratingviolence" : "none",
 	"tags" : [ "Nature" ],
 	"title" : "simpleSlideWallpaper",
-	"type" : "Web",
+	"type" : "web",
 	"version" : 3,
 	"visibility" : "public",
 	"workshopid" : "3157935536",

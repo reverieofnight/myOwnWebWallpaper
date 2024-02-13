@@ -6,6 +6,10 @@ const clockModule = (function () {
     let fontFamily = 'digital';
     let color = 'white';
     let time = '';
+    let date = '';
+    let weekday = '';
+    let month = '';
+    let year = '';
     let timeLayer = '';
     let timeChild = {};
     let dotActive = false;
@@ -98,24 +102,28 @@ const clockModule = (function () {
             }
             timeLayer.appendChild(num);
         }
-        dateLayer = document.createElement('span');
+        dateLayer = document.createElement('div');
         dateLayer.classList.add('date');
         dateLayer.style.fontSize =  dateFontSize + 'px';
         clock.appendChild(dateLayer);
-        yearLayer = document.createElement('span');
+        yearLayer = document.createElement('div');
         yearLayer.classList.add('year');
         yearLayer.style.fontSize = yearFontSize + 'px';
         clock.appendChild(yearLayer);
         refreshTime();
     }
     function refreshTime(){
-        let newtime = dayjs().format('HH:mm:ss');
+        let latestTime = dayjs().format('YYYY-M-DD-d-HH:mm:ss');
+        let latestTimeArr = latestTime.split('-');
+        let newtime = latestTimeArr[4];
         if(newtime !== time){
             dotActive = !dotActive;
         }
         time = newtime;
         for(let i = 1;i <= 8;i++){
-            timeChild['number' + i].innerText = time.charAt(i - 1);
+            if(timeChild['number' + i].innerText !== time.charAt(i - 1)){
+                timeChild['number' + i].innerText = time.charAt(i - 1)
+            };
             if(i === 3 || i === 6){
                 if(dotActive){
                     timeChild['number' + i].classList.add('active');
@@ -124,14 +132,20 @@ const clockModule = (function () {
                 }
             }
         }
-        let weekday = enWeekdayList[dayjs().day()];
-        let month = enMonthList[dayjs().month()];
-        let date = dayjs().date();
-        dateLayer.innerText = weekday + ',' + month + ',' + date;
-        let year = dayjs().year();
-        yearLayer.innerText = year;
-        
-        
+        let newYear = latestTimeArr[0];
+        let newMonth = enMonthList[latestTimeArr[1] - 1];
+        let newDate = latestTimeArr[2];
+        let newWeekday = enWeekdayList[latestTimeArr[3]];
+        if(newMonth !== month || newDate !== date || newWeekday !== weekday){
+            month = newMonth;
+            date = newDate;
+            weekday = newWeekday;
+            dateLayer.innerText = weekday + ',' + month + ' ' + date;
+        }
+        if(newYear !== year){
+            year = newYear;
+            yearLayer.innerText = year;
+        }
     }
     function destroy() {
         if(exist){
