@@ -8,20 +8,19 @@
 		{
 			"en-us" : 
 			{
+				"ui_showVisualizer" : "show Visualizer",
 				"ui_showbackground" : "show Background",
 				"ui_showclock" : "show Clock",
 				"ui_slidefolder" : "slide Folder",
-				"ui_timeout" : "timeout",
-				"ui_showVisualizer":"show Visualizer"
+				"ui_timeout" : "timeout"
 			},
 			"zh-chs" : 
 			{
+				"ui_showVisualizer" : "音频可视化",
 				"ui_showbackground" : "显示背景",
 				"ui_showclock" : "显示时钟",
 				"ui_slidefolder" : "图片文件夹",
-				"ui_timeout" : "持续时间",
-				"ui_showVisualizer":"音频可视化"
-
+				"ui_timeout" : "持续时间"
 			}
 		},
 		"properties" : 
@@ -79,7 +78,8 @@
 				"type" : "slider",
 				"value" : 15
 			}
-		}
+		},
+		"supportsaudioprocessing" : true
 	},
 	"preview" : "preview.jpg",
 	"ratingsex" : "none",

@@ -1,5 +1,4 @@
-window.onload = function (){
-    window.viewer = document.querySelector('#view-container');
+window.viewer = document.querySelector('#view-container');
     window.propertiesRecalls = {};
     window.userProperties = {
         timeout:'15000',
@@ -71,4 +70,3 @@ window.onload = function (){
             visualizerModule.destroy();
         }
     }
-}

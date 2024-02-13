@@ -54,3 +54,11 @@ body{
 #clock .dot.active{
     opacity: 1;
 }
+#visualizer{
+    position: absolute;
+    z-index: 1;
+    transform: translate3d(0,0,0);
+}
+#visualizer .bar{
+    transition: all 0.033s ease;
+}

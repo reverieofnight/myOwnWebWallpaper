@@ -136,9 +136,6 @@ const clockModule = (function () {
         let newMonth = enMonthList[latestTimeArr[1] - 1];
         let newDate = latestTimeArr[2];
         let newWeekday = enWeekdayList[latestTimeArr[3]];
-        console.log('month',month);
-        console.log('date',date);
-        console.log('weekday',weekday);
         if(dateLayer.innerText === '' || newMonth !== month || newDate !== date || newWeekday !== weekday){
             month = newMonth;
             date = newDate;
