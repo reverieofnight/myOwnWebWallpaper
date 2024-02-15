@@ -78,7 +78,8 @@
 				"type" : "slider",
 				"value" : 15
 			}
-		}
+		},
+		"supportsaudioprocessing" : true
 	},
 	"preview" : "preview.jpg",
 	"ratingsex" : "none",
@@ -86,7 +87,7 @@
 	"tags" : [ "Music" ],
 	"title" : "simpleSlideWallpaper",
 	"type" : "web",
-	"version" : 5,
+	"version" : 6,
 	"visibility" : "public",
 	"workshopid" : "3157935536",
 	"workshopurl" : "steam://url/CommunityFilePage/3157935536"

@@ -1,4 +1,8 @@
 window.viewer = document.querySelector('#view-container');
+    window.wallpaperRegisterAudioListener(wallpaperAudioListener);
+    function wallpaperAudioListener(){
+
+    }
     window.propertiesRecalls = {};
     window.userProperties = {
         timeout:'15000',
