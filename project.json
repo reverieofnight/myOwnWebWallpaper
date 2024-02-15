@@ -78,16 +78,15 @@
 				"type" : "slider",
 				"value" : 15
 			}
-		},
-		"supportsaudioprocessing" : true
+		}
 	},
 	"preview" : "preview.jpg",
 	"ratingsex" : "none",
 	"ratingviolence" : "none",
-	"tags" : [ "Nature" ],
+	"tags" : [ "Music" ],
 	"title" : "simpleSlideWallpaper",
-	"type" : "Web",
-	"version" : 4,
+	"type" : "web",
+	"version" : 5,
 	"visibility" : "public",
 	"workshopid" : "3157935536",
 	"workshopurl" : "steam://url/CommunityFilePage/3157935536"
